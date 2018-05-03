@@ -4,12 +4,20 @@ const writeSync = require("clipboardy").writeSync;
 function activate(context) {
 
     let copyFullPathDisposable = vscode.commands.registerCommand('culp.CopyFullPath', function (uri) {
+        if (uri == null || uri == ""){
+            return;
+        }
+
         var path = uri.path.replace(/:\//g, '/'); // Replacing /d:/workspace/vs-code with /d/workspace/vs-code
         console.log("Copied: " + path);
         writeSync(path);
     });
 
     let copyRelativeDisposable = vscode.commands.registerCommand('culp.CopyRelativePath', function (uri) {
+        if (uri == null || uri == ""){
+            return;
+        }
+
         var path = vscode.workspace.asRelativePath(uri).replace(/\\/g, '/');
         console.log("Copied: " + path);
         writeSync(path);
