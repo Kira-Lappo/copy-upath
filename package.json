@@ -1,0 +1,62 @@
+{
+    "name": "copy-unix-path",
+    "displayName": "copy-unix-path",
+    "description": "Allows to copy path in unix style",
+    "version": "0.1.0",
+    "publisher": "kira-dev",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:culp.CopyFullPath",
+        "onCommand:culp.CopyRelativePath"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "culp.CopyFullPath",
+                "title": "Copy Unix-like Path"
+            },
+            {
+                "command": "culp.CopyRelativePath",
+                "title": "Copy Relative Unix-like Path"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "culp.CopyFullPath"
+                },
+                {
+                    "command": "culp.CopyRelativePath"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "command": "culp.CopyFullPath"
+                },
+                {
+                    "command": "culp.CopyRelativePath"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "dependencies": {
+        "clipboardy": "^1.2.3"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
