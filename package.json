@@ -19,11 +19,11 @@
         "commands": [
             {
                 "command": "culp.CopyFullPath",
-                "title": "Copy Unix-like Path"
+                "title": "Copy uPath"
             },
             {
                 "command": "culp.CopyRelativePath",
-                "title": "Copy Relative Unix-like Path"
+                "title": "Copy Relative uPath"
             }
         ],
         "menus": {
