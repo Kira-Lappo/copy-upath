@@ -1,57 +1,25 @@
-# copy-unix-path README
+# Copy uPath
 
-This is the README for your extension "copy-unix-path". After writing up a brief description, we recommend including the following sections.
+Extension adds 'copy path' actions, which let you get file path Unix style.
 
-## Features
+## Examples
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+So you have file **C:\workspace\project\source.c** in you **C:\workpsace\project** workspace
 
-For example if there is an image subfolder under your extension project workspace:
+Here copy results are:
 
-\!\[feature X\]\(images/feature-x.png\)
+* `'Copy uPath'`                         : c:/workspace/project/source.c
+* `'Copy Relative uPath'`                : /source.c
+* `'Copy uPath' with 'isWSLPath = true'` : /mnt/c/workspace/project/source.c
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Settings
 
-## Requirements
+Extension is simple as hell, so it has the only configuration
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* `culp.isWSLPath`:  Allows you to copy full path in form which can be used in WSL console
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
 
 ### 0.1.0
 
 Initial release.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
