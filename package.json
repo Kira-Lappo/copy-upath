@@ -1,7 +1,7 @@
 {
     "name": "copy-unix-path",
-    "displayName": "copy-unix-path",
-    "description": "Allows to copy path in unix style",
+    "displayName": "Copy uPath",
+    "description": "Allows to copy path in Unix style on Windows",
     "version": "0.1.0",
     "publisher": "kira-dev",
     "engines": {
@@ -14,8 +14,28 @@
         "onCommand:culp.CopyFullPath",
         "onCommand:culp.CopyRelativePath"
     ],
-    "main": "./extension",
+    "main": "./src/extension",
+    "keywords": [
+        "clipboard", "wsl", "unix", "unix-like", "path", "filepath"
+    ],
     "contributes": {
+        "configuration": [
+            {
+                "title": "Copy uPath Settings",
+                "properties": {
+                    "culp.isWSLPath": {
+                        "type": "boolean",
+                        "enum": [
+                            true,
+                            false
+                        ],
+                        "default": false,
+                        "description": "Copy path for your WSL in form /wsl/c/temp/file.txt",
+                        "scope": "window"
+                    }
+                }
+            }
+        ],
         "commands": [
             {
                 "command": "culp.CopyFullPath",
@@ -53,10 +73,10 @@
         "clipboardy": "^1.2.3"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "eslint": "^4.11.0",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "eslint": "^4.11.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.17"
     }
 }
