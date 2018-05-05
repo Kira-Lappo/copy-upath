@@ -38,10 +38,12 @@
         ],
         "commands": [
             {
+                "category": "File",
                 "command": "culp.CopyFullPath",
                 "title": "Copy uPath"
             },
             {
+                "category": "File",
                 "command": "culp.CopyRelativePath",
                 "title": "Copy Relative uPath"
             }
