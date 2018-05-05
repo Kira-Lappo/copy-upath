@@ -4,6 +4,10 @@
     "description": "Allows to copy path in Unix style on Windows",
     "version": "0.1.0",
     "publisher": "kira-dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Kira-Lappo/copy-upath"
+    },
     "engines": {
         "vscode": "^1.22.0"
     },
@@ -16,7 +20,7 @@
     ],
     "main": "./src/extension",
     "keywords": [
-        "clipboard", "wsl", "unix", "unix-like", "path", "filepath"
+        "clipboard", "wsl", "unix", "file", "path"
     ],
     "contributes": {
         "configuration": [
