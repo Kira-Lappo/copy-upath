@@ -31,10 +31,11 @@ function registerCommands(context){
             return;
         }
 
-        var path = uri.path.replace(/:\//g, '/'); // Replacing /d:/workspace/vs-code with /d/workspace/vs-code
+        var path = uri.path;
         if (isWSLPath){
-            path = wslFullPathPrefix + path;
+            path = wslFullPathPrefix + path.replace(/:\//g, '/'); // Replacing /d:/workspace/vs-code with /d/workspace/vs-code;
         }
+
         writeToClipboard(path);
         log("copied to clipboard: " + path);
     });
