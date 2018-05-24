@@ -2,8 +2,9 @@
     "name": "copy-unix-path",
     "displayName": "Copy uPath",
     "description": "Allows to copy path in Unix style on Windows",
-    "version": "0.2.0",
+    "version": "0.2.0-pre01",
     "publisher": "kira-dev",
+    "license": "Free for personal use",
     "repository": {
         "type": "git",
         "url": "https://github.com/Kira-Lappo/copy-upath"
