@@ -39,15 +39,22 @@ function registerCommands(context){
         }
 
         if ( fullPathPrefix != null ){
-            if (!fullPathPrefix.endsWith("/")){
-                fullPathPrefix = fullPathPrefix + "/";
-            }
-
+            fullPathPrefix = fullPathPrefix.replace(/\/$/g, '');
             path = fullPathPrefix + path;
         }
 
         writeToClipboard(path);
         log("copied to clipboard: " + path);
+    });
+
+    let copyFileNameDisposable = vscode.commands.registerCommand('culp.CopyFileName', function (uri) {
+        if ( uri == null ){
+            return;
+        }
+        // Todo [2018/5/24 KL] Find more elegant way to get file name from path
+        var fileName = uri.path.substring(uri.path.lastIndexOf('/') + 1);
+        writeToClipboard(fileName);
+        log("copied to clipboard: " + fileName);
     });
 
     let copyRelativeDisposable = vscode.commands.registerCommand('culp.CopyRelativePath', function (uri) {
@@ -62,6 +69,7 @@ function registerCommands(context){
 
     context.subscriptions.push(copyFullPathDisposable);
     context.subscriptions.push(copyRelativeDisposable);
+    context.subscriptions.push(copyFileNameDisposable);
 }
 
 function registerSettingsListening(context){

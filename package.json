@@ -20,7 +20,11 @@
     ],
     "main": "./src/extension",
     "keywords": [
-        "clipboard", "wsl", "unix", "file", "path"
+        "clipboard",
+        "wsl",
+        "unix",
+        "file",
+        "path"
     ],
     "contributes": {
         "configuration": [
@@ -34,8 +38,8 @@
                         "scope": "window"
                     },
                     "culp.fullPath.removeDiscColons": {
-                        "type": "bool",
-                        "enum":[
+                        "type": "boolean",
+                        "enum": [
                             true,
                             false
                         ],
