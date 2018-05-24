@@ -2,7 +2,7 @@
     "name": "copy-unix-path",
     "displayName": "Copy uPath",
     "description": "Allows to copy path in Unix style on Windows",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "kira-dev",
     "repository": {
         "type": "git",
