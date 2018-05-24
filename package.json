@@ -2,8 +2,9 @@
     "name": "copy-unix-path",
     "displayName": "Copy uPath",
     "description": "Allows to copy path in Unix style on Windows",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "kira-dev",
+    "license": "Free for personal use",
     "repository": {
         "type": "git",
         "url": "https://github.com/Kira-Lappo/copy-upath"
@@ -20,21 +21,31 @@
     ],
     "main": "./src/extension",
     "keywords": [
-        "clipboard", "wsl", "unix", "file", "path"
+        "clipboard",
+        "wsl",
+        "unix",
+        "file",
+        "path"
     ],
     "contributes": {
         "configuration": [
             {
                 "title": "Copy uPath Settings",
                 "properties": {
-                    "culp.isWSLPath": {
+                    "culp.fullPath.prefix": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Contains prefix for the full path",
+                        "scope": "window"
+                    },
+                    "culp.fullPath.removeDiscColons": {
                         "type": "boolean",
                         "enum": [
                             true,
                             false
                         ],
                         "default": false,
-                        "description": "Copy path for your WSL in form /wsl/c/temp/file.txt",
+                        "description": "Remove or not colons after disk letter",
                         "scope": "window"
                     }
                 }
@@ -50,6 +61,11 @@
                 "category": "File",
                 "command": "culp.CopyRelativePath",
                 "title": "Copy Relative uPath"
+            },
+            {
+                "category": "File",
+                "command": "culp.CopyFileName",
+                "title": "Copy File Name"
             }
         ],
         "menus": {
@@ -59,6 +75,9 @@
                 },
                 {
                     "command": "culp.CopyRelativePath"
+                },
+                {
+                    "command": "culp.CopyFileName"
                 }
             ],
             "editor/title/context": [
@@ -67,6 +86,9 @@
                 },
                 {
                     "command": "culp.CopyRelativePath"
+                },
+                {
+                    "command": "culp.CopyFileName"
                 }
             ]
         }
