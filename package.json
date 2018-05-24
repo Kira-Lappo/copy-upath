@@ -27,14 +27,20 @@
             {
                 "title": "Copy uPath Settings",
                 "properties": {
-                    "culp.isWSLPath": {
-                        "type": "boolean",
-                        "enum": [
+                    "culp.fullPath.prefix": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Contains prefix for the full path",
+                        "scope": "window"
+                    },
+                    "culp.fullPath.removeDiscColons": {
+                        "type": "bool",
+                        "enum":[
                             true,
                             false
                         ],
                         "default": false,
-                        "description": "Copy path for your WSL in form /wsl/c/temp/file.txt",
+                        "description": "Remove or not colons after disk letter",
                         "scope": "window"
                     }
                 }
@@ -50,6 +56,11 @@
                 "category": "File",
                 "command": "culp.CopyRelativePath",
                 "title": "Copy Relative uPath"
+            },
+            {
+                "category": "File",
+                "command": "culp.CopyFileName",
+                "title": "Copy File Name"
             }
         ],
         "menus": {
@@ -59,6 +70,9 @@
                 },
                 {
                     "command": "culp.CopyRelativePath"
+                },
+                {
+                    "command": "culp.CopyFileName"
                 }
             ],
             "editor/title/context": [
@@ -67,6 +81,9 @@
                 },
                 {
                     "command": "culp.CopyRelativePath"
+                },
+                {
+                    "command": "culp.CopyFileName"
                 }
             ]
         }
